@@ -70,7 +70,7 @@ export const login = async(req, res) => {
                 profilePic: user.profilePic,
                 msg: "logged in successfully!"
             });
-            console.log("logged in successfully!");
+            console.log("logged in successfully! as ",user.fullName);
         } else {
             res.status(400).json({ error: "wrong username or password!" });
         }
