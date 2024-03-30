@@ -15,6 +15,7 @@ const Message = ({message}) => {
     const profilePic = fromMe ? authUser?.profilePic : selectedConversation?.profilePic
     const bubbleBgColor = fromMe ? "bg-violet-500" : "";
 
+    const shakeClass = message.shouldShake ? "shake" : "";
 
     return (
         <div className={chatClassName}>
@@ -24,7 +25,7 @@ const Message = ({message}) => {
                         alt='Tailwinf CSS chat bubble avatar' src={profilePic} />
                 </div>
             </div>
-            <div className={`chat-bubble text-white ${bubbleBgColor}`}>
+            <div className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass}`}>
                 {message.message}
             </div>
             <div className='chat-footer text-xs opacity-90 flex gap-1 items-center'>{fromattedTime}</div>
